@@ -47,6 +47,7 @@ class NumMatrix:
                 self.sum_arr[i+1][j+1] = matrix[i][j]   # 原矩阵(0-based) -> 前缀和数组(1-based)
         
         # 2. 核心计算:原地累加计算二维前缀和
+        # sum[i][j]: 代表左上角(0,0)到右下角(i,j)这个范围的累加和
         for i in range(1, m + 1):
             for j in range(1, n + 1):
                 # 公式:当前格 = 左边 + 上边 - 左上角重叠部分 + 本身数值(已填入)
